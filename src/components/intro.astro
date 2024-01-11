@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<ContentSection title="Less work, more customers" id="intro">
+  <Fragment slot="lead">
+    UnAd is the easiest way to connect with your customers through <span class="text-primary">SMS
+    marketing</span>.  Say goodbye to complicated marketing tools that require
+    hours of training, and hello to UnAd&apos;s user-friendly platform.
+    Get started today and watch your business grow!
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="#how-it-works"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="mdi" name="telescope" class="h-8" />
+      <span>How it works</span>
+    </a>
+    <a
+      href="https://unad.tech/register"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="mdi" name="rocket" class="h-8" />
+      <span>Try it out</span>
+    </a>
+  </div>
+</ContentSection>

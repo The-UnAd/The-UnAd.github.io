@@ -1,0 +1,51 @@
+---
+import CompatibilityList from "~/components/compatibility-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { CarrierItem } from "~/types";
+
+const carriers: Array<CarrierItem> = [
+  {
+    title: "AT&T",
+    icon: "frameworks/react",
+    url: "https://reactjs.org/",
+  },
+  {
+    title: "Verizon",
+    icon: "frameworks/preact",
+    url: "https://preactjs.com/",
+  },
+  {
+    title: "Sprint",
+    icon: "frameworks/svelte",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "T-Mobile",
+    icon: "frameworks/vue",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "Mint Mobile",
+    icon: "frameworks/vue",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "T-Mobile",
+    icon: "frameworks/vue",
+    url: "https://vuejs.org/",
+  }
+];
+
+---
+
+<ContentSection title="Carrier Support" id="carriers">
+  <Fragment slot="lead">
+    UnAd is registered with <span
+    class="text-primary">all major carriers</span
+  >, so there's no worry about your messages being blocked.
+  </Fragment>
+  <CompatibilityList
+    items={carriers}
+    title="Carriers"
+  />
+</ContentSection>

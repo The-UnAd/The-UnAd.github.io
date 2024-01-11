@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Simplicity",
+    description:
+      "No need for complicated setup and campaign management. UnAd is easy to use and requires no technical knowledge.",
+    icon: "mdi:lightbulb-outline",
+  },
+  {
+    title: "100% SMS, No Apps",
+    description:
+      "Every interaction with UnAd is done via SMS. No need you or your customers to download an app.",
+    icon: "mdi:message-alert",
+  },
+  {
+    title: "On-Demand Marketing",
+    description:
+      "UnAd allows you to send messages to your customers whenever you want. No need to wait for a campaign to start.",
+    icon: "mdi:clock-time-four-outline",
+  },
+  {
+    title: "Reach Those Who Care",
+    description:
+      "Your messages only go out to customers who have opted in to receive them. No spam, no wasted messages.",
+    icon: "mdi:graph",
+  },
+  {
+    title: "SEO Enabled",
+    description:
+      "Your subscription link is fully SEO enabled, so customers can find you when they search for your business.",
+    icon: "mdi:search-web",
+  },
+  {
+    title: "Affordable",
+    description:
+      "UnAd starts at just $7 per month. No contracts, no commitments. Pay only for what you use.",
+    icon: "mdi:currency-usd",
+  },
+];
+---
+
+<ContentSection title="Features" id="features">
+  <Fragment slot="lead">
+    UnAd is a direct-to-consumer marketing platform that allows you to
+    reach customers in an efficient, cost-effective way. With UnAd, you
+    can easily create and send <span class="text-primary">targeted SMS messages</span> and analyze the
+    results to improve future marketing efforts.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
