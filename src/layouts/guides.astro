@@ -1,0 +1,87 @@
+---
+import "@fontsource-variable/inter";
+import "~/styles/index.css";
+import HeroImage from "~/components/hero-image.astro";
+import Prose from "./prose.astro";
+import { Icon } from "astro-icon/components";
+
+const { generator, site } = Astro;
+const image = new URL("logo-wide.svg", site);
+import Header from "./guides-header.astro";
+
+import { astroI18n } from "astro-i18n"
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang={astroI18n.locale} class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="generator" content={generator} />
+
+    <title>{`UnAd - ${frontmatter.title}`}</title>
+    <meta name="description" content={frontmatter.description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="UnAd" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={frontmatter.description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <body
+    class="flex h-full flex-col justify-between bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header />
+    <section class="mt-10 flex flex-col p-10">
+      <Prose>
+        <slot />
+      </Prose>
+    </section>
+    <footer
+      class="relative bottom-0 flex w-full items-center justify-center border-b border-transparent px-8 py-4 text-white"
+    >
+      <div class="absolute inset-0 overflow-hidden opacity-40">
+        <HeroImage />
+      </div>
+      <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <li>
+          <a
+            class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
+            href={"/"}
+          >
+            <span class="sr-only">{"Home"}</span>
+            <Icon class="h-full text-xl" name={"mdi:home"} />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

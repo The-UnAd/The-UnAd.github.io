@@ -1,17 +1,19 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
+import { t } from "astro-i18n";
 ---
 
-<ContentSection title="Get Started Today!" id="call-to-action">
-  <Fragment slot="lead">This is a fancy call to action.</Fragment>
+<ContentSection title={t('call-to-action.title')} id="call-to-action">
+  <Fragment slot="lead">
+    {t('call-to-action.lead.0')}<span class="text-primary">{t('call-to-action.lead.1')}</span>{t('call-to-action.lead.2')}</Fragment>
   <div class="grid grid-cols-1 sm:grid-cols-1">
     <a
-      href="https://unad.tech/register"
+      href="https://signup.unad.dev/register"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
-      <Icon pack="mdi" name="rocket-launch" class="h-8" />
-      <span>Register Your Account</span>
+      <Icon name="mdi:rocket-launch" class="h-8 text-xl" />
+      <span>{t('call-to-action.button')}</span>
     </a>
   </div>
 </ContentSection>

@@ -8,21 +8,17 @@ import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
 import CallToAction from "~/components/call-to-action.astro";
-import Splash from "~/components/splash.astro";
 import NameExplainer from "~/components/name-explainer.astro";
+import Splash from "~/components/splash.astro";
 
 const { generator, site } = Astro;
 const image = new URL("logo-wide.svg", site);
 
-import { astroI18n, t } from "astro-i18n";
+import { astroI18n, t } from "astro-i18n"
 ---
 
 <!doctype html>
-<html
-  lang={astroI18n.locale}
-  class="h-full motion-safe:scroll-smooth"
-  data-theme="dark"
->
+<html lang={astroI18n.locale} class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -30,12 +26,12 @@ import { astroI18n, t } from "astro-i18n";
     <meta name="generator" content={generator} />
 
     <title>{t("title")}</title>
-    <meta name="description" content={t("title")} />
+    <meta name="description" content={t('title')} />
 
     <!-- social media -->
-    <meta property="og:title" content={t("title")} />
+    <meta property="og:title" content={t('title')} />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content={t("title")} />
+    <meta property="og:description" content={t('title')} />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
@@ -64,24 +60,6 @@ import { astroI18n, t } from "astro-i18n";
         });
     </script>
   </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BWFRJCD6Y"
-  ></script>
-  <script>
-    // @ts-ignore
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-    // @ts-ignore
-      dataLayer.push(arguments);
-    }
-    // @ts-ignore
-    gtag("js", new Date());
-
-    // @ts-ignore
-    gtag("config", "G-5BWFRJCD6Y");
-  </script>
-
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >

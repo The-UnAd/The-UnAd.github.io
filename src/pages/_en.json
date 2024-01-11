@@ -1,0 +1,96 @@
+{
+  "title": "UnAd - Marketing Made Simple",
+  "splash": {
+    "title": "UnAd:<br/>Text Marketing<br/>Made Simple"
+  },
+  "header": {
+    "title": "UnAd: Marketing Made Simple",
+    "nav": {
+      "title": "UnAd: Unobtrusive Advertising",
+      "features": "Features",
+      "howItWorks": "How It Works"
+    }
+  },
+  "intro": {
+    "title": "Less work, more customers",
+    "lead": "UnAd is a simple, easy to use marketing platform that allows you to send text message announcements to your customers.",
+    "buttons": {
+      "howItWorks": "How It Works",
+      "tryItOut": "Try It Out"
+    }
+  },
+  "how-it-works": {
+    "title": "How It Works",
+    "lead": "It only takes a few minutes to get started.",
+    "steps": {
+      "0": {
+        "title": "Sign Up",
+        "description": "Simply enter your phone number and business name to get started.",
+        "icon": "mdi:form-textbox"
+      },
+      "1": {
+        "title": "Share Link",
+        "content": "Receive a link to share with your customers. You can post it anywhere online, or just share it directly with your customers in person.",
+        "icon": "mdi:share"
+      },
+      "2": {
+        "title": "Send Messages",
+        "content": "Text back the number you received your one-time code from and start sending messages to your customers.",
+        "icon": "mdi:message-alert-outline"
+      }
+    }
+  },
+  "call-to-action": {
+    "title": "Get Started Today!",
+    "lead": {
+      "0": "Ready to ",
+      "1": "revolutionize your marketing",
+      "2": "?  Take the hassle out of reaching your customers and unlock the power of simplicity with UnAd.  Elevate your business with ease – click below to get started and watch your success unfold!"
+    },
+    "button": "Register Your Account"
+  },
+  "features": {
+    "title": "Features",
+    "lead": {
+      "0": "UnAd is a direct-to-consumer marketing platform that allows you to reach customers in an efficient, cost-effective way. With UnAd, you can easily create and send ",
+      "1": "targeted SMS messages",
+      "2": " and analyze the results to improve future marketing efforts."
+    },
+    "items": [
+      {
+        "title": "Simplicity",
+        "description": "No need for complicated setup and campaign management. UnAd is easy to use and requires no technical knowledge.",
+        "icon": "mdi:lightbulb-outline"
+      },
+      {
+        "title": "100% SMS, No Apps",
+        "description": "Every interaction with UnAd is done via SMS. No need for you or your customers to download an app.",
+        "icon": "mdi:message-alert"
+      },
+      {
+        "title": "On-Demand Marketing",
+        "description": "UnAd allows you to send messages to your customers whenever you want. No need to wait for a campaign to start.",
+        "icon": "mdi:clock-time-four-outline"
+      },
+      {
+        "title": "Reach Those Who Care",
+        "description": "Your messages only go out to customers who have opted in to receive them. No spam, no wasted messages.",
+        "icon": "mdi:graph"
+      },
+      {
+        "title": "SEO Enabled",
+        "description": "Your subscription link is fully SEO enabled, so customers can find you when they search for your business.",
+        "icon": "mdi:search-web"
+      },
+      {
+        "title": "Affordable",
+        "description": "UnAd starts at just $10 per week. No contracts, no commitments. Pay only for what you use.",
+        "icon": "mdi:currency-usd"
+      }
+    ]
+  },
+  "name-explainer": {
+    "title": "What's with the name?",
+    "description": "The name \"UnAd\" is a sort of portmanteau of \"Unobtrusive\" and \"Advertising\".  The idea is that the ads are unobtrusive because your customers explicitly sign up to receive the ads directly from you. And when they are already interested in your product or service, and are more likely to engage with your ad."
+  }
+}

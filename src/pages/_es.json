@@ -1,0 +1,96 @@
+{
+  "title": "UnAd: marketing simplificado",
+  "splash": {
+    "title": "Sin anuncio:<br/>Marketing de texto<br/>Hecho simple"
+  },
+  "header": {
+    "title": "UnAd: marketing simplificado",
+    "nav": {
+      "title": "UnAd: publicidad discreta",
+      "features": "Características",
+      "howItWorks": "Cómo funciona"
+    }
+  },
+  "intro": {
+    "title": "Menos trabajo, más clientes",
+    "lead": "UnAd es una plataforma de marketing sencilla y fácil de usar que le permite enviar anuncios por mensaje de texto a sus clientes.",
+    "buttons": {
+      "howItWorks": "Cómo funciona",
+      "tryItOut": "Pruébalo"
+    }
+  },
+  "how-it-works": {
+    "title": "Cómo funciona",
+    "lead": "Sólo le llevará unos minutos empezar.",
+    "steps": {
+      "0": {
+        "title": "Inscribirse",
+        "description": "Simplemente ingrese su número de teléfono y el nombre de su empresa para comenzar.",
+        "icon": "mdi:form-textbox"
+      },
+      "1": {
+        "title": "Compartir enlace",
+        "content": "Reciba un enlace para compartir con sus clientes. ",
+        "icon": "mdi:share"
+      },
+      "2": {
+        "title": "Enviar mensajes",
+        "content": "Envíe un mensaje de texto al número del que recibió su código único y comience a enviar mensajes a sus clientes.",
+        "icon": "mdi:message-alert-outline"
+      }
+    }
+  },
+  "call-to-action": {
+    "title": "¡Empiece hoy!",
+    "lead": {
+      "0": "Listo para ",
+      "1": "revoluciona tu marketing",
+      "2": "? "
+    },
+    "button": "Registra tu cuenta"
+  },
+  "features": {
+    "title": "Características",
+    "lead": {
+      "0": "UnAd es una plataforma de marketing directo al consumidor que le permite llegar a los clientes de una manera eficiente y rentable.  ",
+      "1": "mensajes SMS dirigidos",
+      "2": " y analizar los resultados para mejorar futuros esfuerzos de marketing."
+    },
+    "items": [
+      {
+        "title": "Sencillez",
+        "description": "No es necesario realizar una configuración ni una gestión de campañas complicadas. ",
+        "icon": "mdi:lightbulb-outline"
+      },
+      {
+        "title": "100% SMS, sin aplicaciones",
+        "description": "Cada interacción con UnAd se realiza mediante SMS. ",
+        "icon": "mdi:message-alert"
+      },
+      {
+        "title": "Marketing bajo demanda",
+        "description": "UnAd te permite enviar mensajes a tus clientes cuando quieras. ",
+        "icon": "mdi:clock-time-four-outline"
+      },
+      {
+        "title": "Llegue a quienes se preocupan",
+        "description": "Sus mensajes solo se envían a los clientes que han optado por recibirlos. ",
+        "icon": "mdi:graph"
+      },
+      {
+        "title": "SEO habilitado",
+        "description": "Su enlace de suscripción está totalmente habilitado para SEO, por lo que los clientes pueden encontrarlo cuando buscan su negocio.",
+        "icon": "mdi:search-web"
+      },
+      {
+        "title": "Asequible",
+        "description": "UnAd comienza en sólo $10 por semana. ",
+        "icon": "mdi:currency-usd"
+      }
+    ]
+  },
+  "name-explainer": {
+    "title": "¿Qué pasa con el nombre?",
+    "description": "El nombre \"UnAd\" es una especie de combinación de \"discreto\" y \"publicidad\". "
+  }
+}

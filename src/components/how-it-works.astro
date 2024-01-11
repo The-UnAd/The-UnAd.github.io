@@ -1,50 +1,23 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
-import type { HowItWorksStep } from "~/types";
-
-const steps: Array<HowItWorksStep> = [
-  {
-    title: "Sign Up",
-    description:
-      "Simply Enter your phone number and business name to get started.",
-    icon: "mdi:form-textbox",
-  },
-  {
-    title: "Pay",
-    description:
-      "Enter your payment info and we'll charge you $1 to verify your card. You'll only be charged for the messages you send.",
-    icon: "mdi:currency-usd",
-  },
-  {
-    title: "Share Link",
-    description:
-      "Receive a link to share with your customers. You can post it anywhere online, or just share it directly with your customers in person.",
-    icon: "mdi:share",
-  },
-  {
-    title: "Send Messages",
-    description:
-      "Text back the number you received your one-time code from and start sending messages to your customers.",
-    icon: "mdi:message-alert-outline",
-  },
-];
+import { t } from "astro-i18n";
 ---
 
-<ContentSection title="How It Works" id="how-it-works">
+<ContentSection title={t('how-it-works.title')} id="how-it-works">
   <Fragment slot="lead">
-    It only takes a few minutes to get started with Unad.
+    {t('how-it-works.lead')}
   </Fragment>
   <ul class="grid max-w-6xl grid-cols-1">
     {
-      steps.map(({ title, description, icon }) => (
+      [...new Array(3).keys()].map((i) => (
         <li class="flex items-start gap-4 border border-default bg-offset p-6">
-          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} />
+          <div class="h-16 w-16 p-3">
+            <Icon name={t(`how-it-works.steps.${i}.icon`)} class="text-4xl"/>
           </div>
           <div class="flex flex-col">
-            <p class="font-extrabold text-xl">{title}</p>
-            <p class="text-offset text-sm">{description}</p>
+            <p class="font-extrabold text-xl">{t(`how-it-works.steps.${i}.title`)}</p>
+            <p class="text-offset text-sm">{t(`how-it-works.steps.${i}.description`)}</p>
           </div>
         </li>
       ))

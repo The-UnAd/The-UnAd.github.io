@@ -1,13 +1,13 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
 
 const links: Array<FooterLink> = [
   {
-    url: "https://unad.tech/",
+    url: "https://astro.build",
     description: "Built with Astro",
-    icon: "mdi:home",
+    icon: "mdi:code-braces",
   },
   {
     url: "https://github.com/nibblesnbits",
@@ -15,9 +15,9 @@ const links: Array<FooterLink> = [
     icon: "fa-brands:github-alt",
   },
   {
-    url: "https://unad.tech/register",
-    description: "Astro on Discord",
-    icon: "mdi:rocket",
+    url: "https://stripe.com",
+    description: "Payments by Stripe",
+    icon: "fa-brands:stripe-s",
   }
 ];
 ---
@@ -35,7 +35,7 @@ const links: Array<FooterLink> = [
             href={link.url}
           >
             <span class="sr-only">{link.description}</span>
-            <Icon class="h-full" name={link.icon} />
+            <Icon class="h-full text-xl" name={link.icon} />
           </a>
         </li>
       ))

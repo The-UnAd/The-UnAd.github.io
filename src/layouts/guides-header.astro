@@ -1,51 +1,33 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
-import type { NavItem } from "~/types";
 
-import { t } from "astro-i18n";
-
-const navItems: Array<NavItem> = [
-  { title: t("header.nav.features"), url: "#features" },
-  { title: t("header.nav.howItWorks"), url: "#how-it-works" },
-];
+import { getCollection } from "astro:content";
+import { astroI18n } from "astro-i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const guides = await getCollection("guides");
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="fixed-header relative z-20 flex w-full items-center justify-between border-b border-transparent bg-black px-8 py-4 text-white"
 >
-  <div id="scroll-bobble" class="flex justify-center">
-    <div
-      class="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-white p-2 shadow-lg ring-1 ring-slate-900/5 dark:bg-slate-800 dark:ring-slate-200/20"
-    >
-      <a href="#intro">
-        <svg
-          class="h-6 w-6 text-violet-500"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">{t("header.nav.title")}</h1>
-    <!-- <Icon name="logo-wide" class="h-10" /> -->
+    <h1 class="sr-only">UnAd</h1>
   </a>
   <div>
     <div class="flex items-center gap-6">
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
           {
-            navItems.map(({ title, url }) => (
+            guides.map(({ data: { title }, slug }) => (
               <li>
-                <a class="text-sm" href={url}>
+                <a
+                  class="text-sm"
+                  href={getRelativeLocaleUrl(
+                    astroI18n.locale,
+                    `/guides/${slug}`,
+                  )}
+                >
                   {title}
                 </a>
               </li>
@@ -61,7 +43,6 @@ const navItems: Array<NavItem> = [
       >
         <Icon name="mdi:menu" class="h-8 text-xl" />
       </button>
-      <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -79,9 +60,15 @@ const navItems: Array<NavItem> = [
           <nav>
             <ul class="flex flex-col">
               {
-                navItems.map(({ title, url }) => (
+                guides.map(({ data: { title }, slug }) => (
                   <li>
-                    <a class="block py-4 text-center text-xl" href={url}>
+                    <a
+                      class="block py-4 text-center text-xl"
+                      href={getRelativeLocaleUrl(
+                        astroI18n.locale,
+                        `/guides/${slug}`,
+                      )}
+                    >
                       {title}
                     </a>
                   </li>
@@ -102,8 +89,6 @@ const navItems: Array<NavItem> = [
   const menuModalId = "menu-modal";
 
   const header = document.querySelector("#page-header") as HTMLElement;
-  const scrollBobble = document.querySelector("#scroll-bobble") as HTMLElement;
-  const page = document.documentElement;
   const menu = document.querySelector(`#${menuModalId} ul`);
   const openNavButton = document.querySelector("#open-nav-button");
   const closeNavButton = document.querySelector("#close-nav-button");
@@ -123,12 +108,6 @@ const navItems: Array<NavItem> = [
 
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
-
-  document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
-    scrollBobble.classList.toggle("hidden", d < 0);
-  });
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {
