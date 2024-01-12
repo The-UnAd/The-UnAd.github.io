@@ -11,9 +11,8 @@ import "~/styles/index.css";
 
 const { generator, site } = Astro;
 const image = new URL("logo-wide.svg", site);
-const description =
-  "UnAd: Marketing Made Simple";
-  import { getLangFromUrl } from '../i18n/utils';
+const description = "UnAd: Marketing Made Simple";
+import { getLangFromUrl } from "~/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 ---
