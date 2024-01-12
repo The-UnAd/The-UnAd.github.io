@@ -4,8 +4,6 @@
 
 > An Astro + Tailwind CSS marketing site for UnAd
 
-![Screenshots of Astro Landing Page](screenshots.jpg)
-
 ## Template
 
 This site is based on the excellent [template](https://github.com/mhyfritz/astro-landing-page) created by [Markus Hsi-Yang Fritz](https://github.com/mhyfritz).
