@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/guides.astro
 title: Sign Up Guide
 description: UnAd Sign Up Guide
 ---

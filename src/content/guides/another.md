@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/guides.astro
 title: Another Guide
 description: UnAd Another Guide
 ---
